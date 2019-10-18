@@ -86,7 +86,24 @@ func myFilter(inputArray: [Int], filter: (Int) -> Bool) -> [Int] {
 
 }
 ```
+func filterFunc(arr:[Double], closure:(Double) -> Bool ) -> [Double] {
+var result =[Double]()
 
+for num in arr {
+if closure(num){
+result.append(num) // once number filters through checking if it is a type double then 
+}
+}
+return result
+}
+
+
+var array = [1,2,3,4,5,6
+
+func filterFuncn(arr: [Double], closure: (Double) -> Bool) {
+var newArray
+ 
+}
 Example:
 
 >filter 1,5,2,7,3,4 by < 4
