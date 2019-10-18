@@ -17,17 +17,6 @@
 import Foundation
 
 
-print("pick on a calcu, or  b  for highorderFunc")
-
-var answer = readLine()
-
-let quoteTwo = "enter your opperations  e.g 5 * 8 "
-print(quoteTwo)
-let response = readLine()?.lowercased() ?? ""
-    
-
-
-
 func mathStuffFactory(opString: String) -> (Double, Double) -> Double {
     var opString = opString
     if opString == "?"{
@@ -46,28 +35,6 @@ func mathStuffFactory(opString: String) -> (Double, Double) -> Double {
     return {x, y in x + y }
   }
 }
-//*******************************************
-
-
-func arithmaticOpperation (str: String) -> Double {
-    
-let responseComponents = response.components(separatedBy: " ")
-    if responseComponents.count != 3 {
-        print(responseComponents)
-        
-        return 0.0
-}
-
-let operand1 = Double(responseComponents[0]) ?? 0.0
-let symbol = responseComponents[1]
-let operand2 = Double(responseComponents[2]) ?? 0.0
-
-let mathOperation = mathStuffFactory(opString: symbol )
-let calculation = mathOperation(operand1, operand2)
-
-return calculation
-}
-//*************
 
 func filterFunc(arr:[Double], closure:(Double) -> Bool ) -> [Double] {
 var result = [Double]()
@@ -80,6 +47,52 @@ result.append(num)
     }
     return result
 }
+
+//func arithmaticOpperation (str: String) -> Double {
+    
+//let responseComponents = response.components(separatedBy: " ")
+//    if responseComponents.count != 3 {
+//        print(responseComponents)
+//
+//        return 0.0
+//}
+    
+
+    
+
+
+
+//return
+//}
+
+
+print("pick on a calcu, or  b  for highorderFunc")
+
+var answer = readLine() ?? ""
+
+let quoteTwo = "enter your opperations  e.g 5 * 8 "
+print(quoteTwo)
+let response = readLine()?.lowercased() ?? ""
+
+let responseArray = response.components(separatedBy: " ")
+let operand1 = Double(responseArray[0]) ?? 0.0
+let symbol = responseArray[1]
+let operand2 = Double(responseArray[2]) ?? 0.0
+
+let mathOperation = mathStuffFactory(opString: symbol )
+let calculation = mathOperation(operand1, operand2)
+
+print("\(operand1) \(symbol) \(operand2) = \(calculation)")
+
+
+//*******************************************
+
+
+
+    
+//*************
+
+
     
 //    func myFilter(str2: String) -> [Double]
 //
